@@ -18,11 +18,11 @@ services:
         ports:
             - 8000:8000
         depends_on:
-            - database1
+            - database
 
     # Database Server
-    database1:
-        container_name: database1
+    database:
+        container_name: database
         image: mysql:8.0
         ports:
             -   3306:3306

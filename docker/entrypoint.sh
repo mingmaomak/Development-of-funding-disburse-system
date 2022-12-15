@@ -16,6 +16,8 @@ php artisan config:clear
 php artisan view:clear
 php artisan cache:clear
 
+# ! # attempting to run the Vite development server...
+# ! npm install && npm run dev
 
 php-fpm -D
 nginx -g "daemon off;"

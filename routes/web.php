@@ -16,3 +16,16 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/psulogin', function () {
+    return view('psuloginpage');
+});
+
+Route::get('/callbackpsulogin', function () {
+    return view('callback');
+});
+
+
+//Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

@@ -24,6 +24,7 @@ class RouteServiceProvider extends ServiceProvider
      *
      * @return void
      */
+    protected $namespace = 'App/Http/Controllers'; // got code from: https://litvinjuan.medium.com/how-to-fix-target-class-does-not-exist-in-laravel-8-f9e28b79f8b4
     public function boot()
     {
         $this->configureRateLimiting();
@@ -31,9 +32,11 @@ class RouteServiceProvider extends ServiceProvider
         $this->routes(function () {
             Route::middleware('api')
                 ->prefix('api')
+                ->namespace($this->namespace) // got code from: https://litvinjuan.medium.com/how-to-fix-target-class-does-not-exist-in-laravel-8-f9e28b79f8b4
                 ->group(base_path('routes/api.php'));
 
-            Route::middleware('web')
+            Route::middleware('web') 
+                ->namespace($this->namespace) // got code from: https://litvinjuan.medium.com/how-to-fix-target-class-does-not-exist-in-laravel-8-f9e28b79f8b4
                 ->group(base_path('routes/web.php'));
         });
     }
